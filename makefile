@@ -7,7 +7,7 @@ SRCDIR=src
 INCDIR=include
 
 TARGET=3D5G3R
-CORES=main TextFile Manager Maker
+CORES=main Manager GraphMatrix
 SRCS=$(patsubst %,$(SRCDIR)/%.cpp,$(CORES))
 OBJS=$(patsubst %,$(OBJDIR)/%.o,$(CORES))
 

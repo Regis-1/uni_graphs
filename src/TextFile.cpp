@@ -28,3 +28,26 @@ void TextFile::write_line(std::string s){
 	}
 }
 
+std::string TextFile::read_line(){
+	if(this->fs.is_open() && this->mode == FILE_MODE::read){
+	std::string line;
+	std::getline(this->fs,line);
+	return line;
+	}
+	else{
+		std::cout<<"Wrong file open mode!"<<std::endl;
+	}
+	return " ";
+}
+
+std::string TextFile::read_word(){
+	if(this->fs.is_open() && this->mode == FILE_MODE::read){
+		std::string s;
+	 	this->fs >> s;
+		return s;	
+	}
+	else{
+		std::cout<<"Wrong file open mode!"<<std::endl;
+	}
+	return " ";
+}

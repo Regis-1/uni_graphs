@@ -8,6 +8,7 @@
 #include "../include/Manager.hh"
 
 int main(int argc, char **argv){
+	std::srand(time(NULL));
 	if(argc == 3){
 		int nV = atoi(argv[1]);
 		float density = std::stof(argv[2]);
@@ -21,7 +22,8 @@ int main(int argc, char **argv){
 		//initializing objects
 		Manager manager = Manager(nV, density, if_name, of_name);
 		manager.initialize();
-		std::cout<<"It's working!"<<std::endl;
+		manager.find_path();
+		manager.finish();
 	}	
 	else{
 		std::cout<< std::endl <<

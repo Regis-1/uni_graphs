@@ -18,6 +18,8 @@ class TextFile{
 		void open(FILE_MODE mode);
 		void close();
 		void write_line(std::string s);
+		std::string read_line();
+		std::string read_word();
 };
 
 #endif
