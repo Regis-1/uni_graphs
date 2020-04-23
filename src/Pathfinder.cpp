@@ -46,6 +46,7 @@ void Pathfinder::save_paths_to_file(std::string of_name){
 			fs<< ptr << " ";
 			ptr = p[ptr];
 		}
+		fs<<"$"<<d[i];
 		fs << std::endl;
 	}
 }
