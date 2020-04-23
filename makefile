@@ -7,7 +7,7 @@ SRCDIR=src
 INCDIR=include
 
 TARGET=3D5G3R
-CORES=main Manager Creator Pathfinder GraphList MinHeap ListElement
+CORES=main Manager Creator Pathfinder GraphList GraphMatrix MinHeap ListElement
 SRCS=$(patsubst %,$(SRCDIR)/%.cpp,$(CORES))
 OBJS=$(patsubst %,$(OBJDIR)/%.o,$(CORES))
 

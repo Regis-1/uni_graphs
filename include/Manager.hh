@@ -12,11 +12,13 @@ class Manager{
 		int nV = 0;
 		float density = 0;
 		int max_weight = 0;
+		bool will_generate = false;
 		std::string if_name;
-		std::string of_name;
 		Pathfinder pathfinder;
 	public:
-		Manager(int nV, float density, int max_weight, std::string if_name, std::string of_name);
+		Manager(){}
+		Manager(std::string if_name);
+		Manager(int nV, float density, int max_weight, std::string if_name);
 		void initialize();
 		void find_path();
 		void finish();
