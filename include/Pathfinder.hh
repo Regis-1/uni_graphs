@@ -20,7 +20,7 @@ class Pathfinder{
 		int starting_vertex;
 		GraphList g_list;
 		GraphMatrix g_matrix;
-		MinHeap heap;
+		MinHeap *heap;
 
 		int *d, *p;
 		bool *QS;

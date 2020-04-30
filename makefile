@@ -22,4 +22,4 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.cpp
 .PHONY: clean
 
 clean:
-	rm -rf $(OBJDIR)/*.o $(TARGET)
+	rm -rf $(OBJDIR)/*.o ./*.txt $(TARGET)

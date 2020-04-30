@@ -28,12 +28,20 @@ void Manager::initialize(){
 }
 
 void Manager::find_path(){
-	pathfinder.find_path_to_all(Representation::list);
-	pathfinder.save_paths_to_file("output_list.txt");
-	pathfinder.clean();
-	pathfinder.find_path_to_all(Representation::matrix);
+	float duration_sum_matrix = 0;
+	float duration_sum_list = 0;
+	for(int i=0; i<99; i++){
+		duration_sum_matrix += pathfinder.find_path_to_all(Representation::matrix);
+		duration_sum_list += pathfinder.find_path_to_all(Representation::list);
+	}
+	duration_sum_matrix += pathfinder.find_path_to_all(Representation::matrix);
 	pathfinder.save_paths_to_file("output_matrix.txt");
 	pathfinder.clean();
+	duration_sum_list += pathfinder.find_path_to_all(Representation::list);
+	pathfinder.save_paths_to_file("output_list.txt");
+	pathfinder.clean();
+	std::cout<<"Time for matrix [us]: "<<(duration_sum_matrix/100)<<std::endl
+		<<"Time for list [us]: "<<(duration_sum_list/100)<<std::endl;
 }
 
 void Manager::finish(){
